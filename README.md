@@ -1,4 +1,18 @@
-# AngularLoginNgrx
+# Angular-Ngrx-LOGIN
+
+
+## What to Improve (area which can be covered in a bigger level)
+
+*   Use of cookies insted of localstorgae.
+*   Create UI more attractive.
+*   Implement of auth service (guard Implementation).
+*   Use of backend service
+*   Responsive appliation
+*   Can cover more use cases like (sign up, already user) functionality.
+*   Token authentication(if API will be involved)
+*   Can Implement Laz loading in routes 
+*   Implement more test cases
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
