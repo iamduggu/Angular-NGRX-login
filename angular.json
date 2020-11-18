@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-login-ngrx": {
+    "angular-ngrx-login": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-login-ngrx",
+            "outputPath": "dist/angular-ngrx-login",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-login-ngrx:build"
+            "browserTarget": "angular-ngrx-login:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-login-ngrx:build:production"
+              "browserTarget": "angular-ngrx-login:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-login-ngrx:build"
+            "browserTarget": "angular-ngrx-login:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-login-ngrx:serve"
+            "devServerTarget": "angular-ngrx-login:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-login-ngrx:serve:production"
+              "devServerTarget": "angular-ngrx-login:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "angular-login-ngrx"
+  "defaultProject": "angular-ngrx-login"
 }
