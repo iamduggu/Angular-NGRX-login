@@ -22,13 +22,14 @@ export const initialState: State = {
 export function reducer(state = initialState, action: Actions.All): State {
     switch (action.type) {
         case Actions.LOGIN_SUCCESS: {
+
             return {
                 ...state,
-                
-                userData: action.payload.user,
+
+                userData: action.payload.user.userName,
                 errorMessage: null
-                
-            
+
+
             };
         }
         case Actions.LOGIN_FAILURE: {

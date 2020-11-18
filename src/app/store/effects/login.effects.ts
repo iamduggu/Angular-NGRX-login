@@ -22,21 +22,23 @@ export class LoginEffects {
 
 
 
+
+
     @Effect()
-    LogIn: Observable<any> = this.actions.pipe(
-        ofType(Actionss.LOGIN),
-        map((action: Actionss.LogIn) => action.payload),
-        // mergeMap((user) =>
-        //     this.loginService.logIn(user.username, user.password).pipe(
-        map((user) => {
-            console.log(user);
-            return new Actionss.LogInSuccess({ user });
-        }),
-        catchError((error) =>
-            of(new Actionss.LogInFailure({ error: error })))
-        //     )
-        // )
-    );
+    LogIn: Observable<any> = this.actions
+        .pipe(ofType(Actionss.LOGIN),
+            map((action: Actionss.LogIn) => action.payload),
+            switchMap(user => {
+                return this.loginService.logIn(user.username, user.password)
+                    .pipe(map((user) => {
+                        return new Actionss.LogInSuccess({ user });
+                    }),
+                        catchError((error) => {
+                            console.log(error);
+                            return of(new Actionss.LogInFailure({ error: error }));
+                        })
+                    );
+            }));
 
 
 
@@ -45,7 +47,7 @@ export class LoginEffects {
     LogInSuccess: Observable<any> = this.actions.pipe(
         ofType(Actionss.LOGIN_SUCCESS),
         tap((user) => {
-            console.log("insucess",user);
+            console.log("inside LogInSuccess Effect ", user);
             localStorage.setItem('user', user);
             this.router.navigateByUrl('/landing');
         })

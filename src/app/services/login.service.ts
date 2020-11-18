@@ -3,19 +3,24 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { User } from '../models/user';
+import { of } from 'rxjs';
 
 
 @Injectable()
 export class LoginService {
-  private BASE_URL = 'http://backend/api/v1/login';
+  
 
   constructor(private http: HttpClient) {}
 
   
 
-  logIn(email: string, password: string): Observable<any> {
-    const url = `${this.BASE_URL}/login`;
-    return this.http.post<User>(url, {email, password});
+  logIn(userName: string, password: string): Observable<any> {
+    const payload = {
+
+      'userName': userName,
+      'password':password
+    }
+     return of(payload);
   }
 
 

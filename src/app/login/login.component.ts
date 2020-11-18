@@ -26,7 +26,6 @@ export class LogInComponent implements OnInit {
 
   ngOnInit() {
     this.getState.subscribe((state) => {
-      console.log('state is ', state);
     });
   };
 
