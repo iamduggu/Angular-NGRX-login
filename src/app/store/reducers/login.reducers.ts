@@ -26,8 +26,7 @@ export function reducer(state = initialState, action: Actions.All): State {
             return {
                 ...state,
 
-                userData: action.payload.user.userName,
-                errorMessage: null
+                userData: action.payload.user.userName
 
 
             };

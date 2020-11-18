@@ -24,9 +24,9 @@ describe('LogInComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should have <h1> with  Login Form', () => {
+  it('should have <h2> with  Login Form', () => {
     const loginElement: HTMLElement = fixture.nativeElement;
-     h2 = loginElement.querySelector('h1');
+     h2 = loginElement.querySelector('h2');
     expect(h2.textContent).toEqual('Login Form');
   });
   it('should create', () => {

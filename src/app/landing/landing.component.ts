@@ -22,12 +22,12 @@ export class LandingComponent implements OnInit {
 
   constructor(
     private store: Store<AppState>
-  ) {  }
+  ) { this.getState = this.store.select(selectLoginState); }
+
 
   ngOnInit() {
-
-    this.store.select(selectLoginState).subscribe((res) => {
-      this.loggeduser = res;
+    this.getState.subscribe((state) => {
+      this.loggeduser = state.userData;
     });
   }
 
