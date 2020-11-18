@@ -52,7 +52,7 @@ After opening the Ngrx DevTools, you will have to reload the application in orde
 *   Create UI more attractive.
 (area which can be covered in a bigger level)
 
-Since our application does not have that much functionalities, so for a improvement point of view we can add these features as well when we want to develope this app further-
+As we know, Since our application does not have that much functionalities, so for a improvement point of view we can add these features as well when we want to develope this app further-
 *   Implement of auth service (guard Implementation). we can Implement Route Guard .
 *   Use of backend service (as of now there is no back-end service(REST API )is involved we can create a rest API(ex: https://back-end/api/v1/login) and consume that api in our service File ).
 *   Can cover more use cases which is related to user login  like (sign up, already user) functionality. we can also create rest api using node js , and use DB for storing data.
