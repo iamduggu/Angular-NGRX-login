@@ -15,6 +15,7 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginService } from './services/login.service';
 import { LoginEffects } from './store/effects/login.effects';
 import { reducers } from './store/app.states';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 @NgModule({
@@ -28,8 +29,11 @@ import { reducers } from './store/app.states';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    StoreModule.forRoot(reducers, {}),
+    StoreModule.forRoot( reducers ),
     EffectsModule.forRoot([LoginEffects]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 15, // Retains last 15 states
+    }),
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]
