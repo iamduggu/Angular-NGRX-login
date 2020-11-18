@@ -4,13 +4,14 @@ import { browser, logging } from 'protractor';
 describe('workspace-project App', () => {
   let page: AppPage;
 
+
   beforeEach(() => {
     page = new AppPage();
   });
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('angular-login-ngrx app is running!');
+    expect(page.getTitleText()).toEqual('angular-ngrx-login app is running!');
   });
 
   afterEach(async () => {
